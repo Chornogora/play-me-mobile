@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">play-me-mobile</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="signIn">Sign In</string>
 </resources>
