@@ -4,4 +4,7 @@
     <string name="password">Password</string>
     <string name="signIn">Sign In</string>
     <string name="signUp">Sign Up</string>
+
+    <!-- Configuration-->
+    <string name="server">http://192.168.43.37:5005</string>
 </resources>
