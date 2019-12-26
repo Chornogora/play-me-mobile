@@ -6,5 +6,13 @@
     <string name="signUp">Sign Up</string>
 
     <!-- Configuration-->
-    <string name="server">http://192.168.43.37:5005</string>
+    <string name="server" translatable="false">http://192.168.43.37:5005</string>
+    <string name="offerRegister">Or register right now!</string>
+    <string name="lessons">Lessons</string>
+    <string name="email">Email</string>
+    <string name="intrument">Instrument</string>
+    <string name="haveAnAccount">Already have an account?</string>
+    <string name="fullName">Full Name</string>
+    <string name="avatar">Avatar URL</string>
+    <string name="save">Save</string>
 </resources>

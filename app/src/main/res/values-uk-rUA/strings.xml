@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">play-me-mobile</string>
+    <string name="offerRegister">Або зареєструйтеся зараз!</string>
+    <string name="password">Пароль</string>
+    <string name="signIn">Увійти</string>
+    <string name="signUp">Зареєструватися</string>
+    <string name="login">Логін</string>
+    <string name="lessons">Уроки</string>
+    <string name="email">Email</string>
+    <string name="fullName">ПІБ</string>
+    <string name="avatar">Адреса фотографії</string>
+    <string name="haveAnAccount">Вже маєте профіль?</string>
+    <string name="intrument">Інструмент</string>
+    <string name="save">Зберегти</string>
+</resources>

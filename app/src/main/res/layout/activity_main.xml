@@ -40,8 +40,7 @@
         android:layout_marginEnd="91dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="HappyMonster" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/password"
@@ -55,8 +54,7 @@
         android:layout_marginEnd="91dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:inputType="textPassword"
-        android:text="Monster2000" />
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/textView"
@@ -67,7 +65,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="107dp"
         android:layout_marginBottom="-190dp"
-        android:text="Login"
+        android:text="@string/login"
         android:textColor="@color/white" />
 
     <TextView
@@ -79,7 +77,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginStart="97dp"
         android:layout_marginBottom="-80dp"
-        android:text="Password"
+        android:text="@string/password"
         android:textColor="@color/white" />
 
     <TextView
@@ -94,7 +92,7 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="-800dp"
         android:gravity="center"
-        android:text="Or register right now!"
+        android:text="@string/offerRegister"
         android:textColor="@android:color/holo_blue_light" />
 
 </RelativeLayout>
