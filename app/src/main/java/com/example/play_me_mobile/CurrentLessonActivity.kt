@@ -9,38 +9,37 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
-import com.example.play_me_mobile.util.MyAdapter
+import com.example.play_me_mobile.util.CurrentLessonViewAdapter
 import kotlinx.android.synthetic.main.activity_current_lesson.*
-import kotlinx.android.synthetic.main.activity_lesson.*
-import kotlinx.android.synthetic.main.activity_lesson.lessonButton
-import kotlinx.android.synthetic.main.activity_lesson.logoutButton
-import kotlinx.android.synthetic.main.activity_lesson.profileButton
+import org.json.JSONObject
 
-class LessonActivity : AppCompatActivity() {
+class CurrentLessonActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    private val lessonsAddress = "/lesson/get"
+    private val contentAddress = "/content/get"
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_lesson)
+        setContentView(R.layout.activity_current_lesson)
 
         val queue = Volley.newRequestQueue(this)
-        val address = "${getString(R.string.server)}${lessonsAddress}"
+        val address = "${getString(R.string.server)}${contentAddress}?lessonId=${intent.getStringExtra("id")}"
 
         //create request
         val request = object: JsonArrayRequest(
             Method.GET, address, null,
             //if success
             Response.Listener { response ->
-                val map = HashMap<String, String>()
+                val arr = Array<JSONObject?>(response.length()) { null}
                 for(i in 0 until response.length()){
-                    val lesson = response.getJSONObject(i)
-                    map[lesson.getString("id")] = lesson.getString("name")
+                    val content = response.getJSONObject(i)
+                    arr[i] = content
                 }
-                configRecycler(map)
+                arr.sortWith(compareBy{it?.getInt("number")})
+                showContent(arr)
             },
             //if not success
             Response.ErrorListener { error ->
@@ -62,14 +61,12 @@ class LessonActivity : AppCompatActivity() {
         setFooterButtons()
     }
 
-    private fun configRecycler(map: Map<String, String>){
+    private fun showContent(arr: Array<JSONObject?>){
         viewManager = LinearLayoutManager(this)
-        viewAdapter = MyAdapter(map, this)
-        recyclerView = list.apply {
+        viewAdapter = CurrentLessonViewAdapter(arr, this)
+        recyclerView = content_list.apply {
             setHasFixedSize(true)
-            // use a linear layout manager
             layoutManager = viewManager
-            // specify an viewAdapter (see also next example)
             adapter = viewAdapter
         }
     }

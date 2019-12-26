@@ -9,10 +9,12 @@
     android:background="@drawable/background">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/list"
-        android:scrollbars="vertical"
+        android:id="@+id/content-list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <LinearLayout
         android:layout_width="379dp"
